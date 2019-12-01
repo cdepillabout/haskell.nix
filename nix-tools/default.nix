@@ -5,11 +5,12 @@
 
 let
   src = cleanSourceHaskell {
-    src = fetchExternal {
-      name     = "nix-tools-src";
-      specJSON = ./nix-tools-src.json;
-      override = "nix-tools-src";
-    };
+    # src = fetchExternal {
+    #   name     = "nix-tools-src";
+    #   specJSON = ./nix-tools-src.json;
+    #   override = "nix-tools-src";
+    # };
+    src = ../../nix-tools;
   };
 
   # we need to patch Cabal, as its data directory logic is broken for component builds, which haskell.nix
